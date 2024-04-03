@@ -14,4 +14,5 @@ myList.append('FIVE');
 myList.prepend('NEW HEAD');
 
 console.log(myList.insertAt('TESTING', 3));
+console.log(myList.removeAt(3));
 console.log(myList.toString());

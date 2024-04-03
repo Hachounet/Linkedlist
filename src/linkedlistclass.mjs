@@ -171,4 +171,29 @@ export default class LinkedList {
 
     return 'Node inserted.';
   }
+
+  removeAt(index) {
+    if (index < 0) {
+      return 'Index must be greather or equal to 0. ';
+    }
+    if (index === 0) {
+      if (this.head === null) {
+        return 'List is already empty.';
+      }
+      this.head = this.head.nextNode;
+    }
+    let counter = 1;
+    let prevNode = this.head;
+    let currentNode = this.head.nextNode;
+    while (currentNode !== null && index !== counter) {
+      prevNode = currentNode;
+      currentNode = currentNode.nextNode;
+      counter++;
+    }
+    if (currentNode === null) {
+      return 'Index is greather than number of elements in the list.';
+    }
+    prevNode.nextNode = currentNode.nextNode;
+    return 'Node deleted.';
+  }
 }
